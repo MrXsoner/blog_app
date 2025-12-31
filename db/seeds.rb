@@ -6,4 +6,8 @@
 #
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+
+
+10.times do |x|
+    Post.create(title: "Title #{x + 1}", body: "This is the body of post number #{x + 1}. It contains some sample text to demonstrate the body content of the post.")
+    end
