@@ -4,9 +4,9 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     registrations: "users/registrations"
   }
-  get '/u/:id', to: 'users#profile', as: 'user'
+  get "/u/:id", to: "users#profile", as: "user"
 
-  #/posts/1/comments/4
+  # /posts/1/comments/4
   resources :posts do
     resources :comments
   end
@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  # Defines the root path route ("/")
+   # Defines the root path route ("/")
    root "pages#home"
 end

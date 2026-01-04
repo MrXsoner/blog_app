@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[ show  index]
+  before_action :authenticate_user!, except: %i[ show index]
   # GET /posts or /posts.json
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
     @post.destroy!
 
     respond_to do |format|
-      format.html { redirect_to posts_path, notice: "Post was successfully destroyed.", status: :see_other }
+      format.html { redirect_to posts_path, notice: "Post was successfully deleted.", status: :see_other }
       format.json { head :no_content }
     end
   end
