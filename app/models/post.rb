@@ -5,5 +5,6 @@ class Post < ApplicationRecord
     has_many :comments, dependent: :destroy
     def views
         super || 0
-    end 
+    end
+    has_many :notifications, as: :params, class_name: "Noticed::Notification", dependent: :destroy
 end

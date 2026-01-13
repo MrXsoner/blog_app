@@ -57,3 +57,5 @@ group :test do
 end
 
 gem "devise"
+
+gem "noticed", "~> 3.0"
