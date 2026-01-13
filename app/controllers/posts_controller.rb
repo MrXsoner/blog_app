@@ -59,7 +59,11 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def mark_notification_as_read
+    notification = current_user.notifications.find(params[:id])
+    notification.update(read_at: Time.current)
+    redirect_to notification.event.url, notice: "Notification marked as read."
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
