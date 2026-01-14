@@ -7,4 +7,12 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   has_many :notifications, as: :recipient, dependent: :destroy, class_name: "Noticed::Notification"
+
+  def self.ransackable_attributes(auth_object = nil)
+    column_names
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    [ "posts", "comments" ]
+  end
 end
