@@ -7,4 +7,12 @@ class Post < ApplicationRecord
         super || 0
     end
     has_many :notifications, as: :params, class_name: "Noticed::Notification", dependent: :destroy
+
+    def self.ransackable_attributes(auth_object = nil)
+        column_names
+    end
+
+    def self.ransackable_associations(auth_object = nil)
+        [ "user" ]
+    end
 end

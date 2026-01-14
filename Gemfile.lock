@@ -225,6 +225,10 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.3.1)
+    ransack (4.4.1)
+      activerecord (>= 7.2)
+      activesupport (>= 7.2)
+      i18n
     rdoc (7.0.3)
       erb
       psych (>= 4.0.0)
@@ -331,6 +335,7 @@ DEPENDENCIES
   noticed (~> 3.0)
   puma (>= 5.0)
   rails (~> 7.2.3)
+  ransack (~> 4.4)
   rubocop-rails-omakase
   selenium-webdriver
   sprockets-rails
